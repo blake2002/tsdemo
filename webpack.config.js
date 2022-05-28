@@ -38,22 +38,16 @@ module.exports = {
                         //配置babel
                         options:{
                             // 设置预定义的环境，
-                            persets:[
+                            presets:[
                                 [
                                     //指定环境的插件
                                     "@babel/preset-env",
                                     //配置信息
                                     {
-                                        targets:{
-                                            // 要兼容chrome 88 版本的浏览器
-                                            "chrome":"88",
-                                             //兼容ie11
-                                             "ie":"11"
-                                        },
                                         //指定corejs版本
                                         "corejs":"3",
                                         // 使用corejs的方式, usage 表示按需加载
-                                        "useBiultIns":"usage"
+                                        "useBuiltIns":"usage"
                                     }
                                 ]
                             ]
@@ -81,6 +75,8 @@ module.exports = {
     resolve:{
         // 表示以.ts .js作为扩展名的，都可以作为模块使用
         extensions:['.ts','.js']
-    }
+    },
+       // 指定mode mode值分为三种：none / development / production
+       mode: 'development'
 
 }
